@@ -1,0 +1,58 @@
+﻿@model WebThuVien.Models.TheThuVien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Sửa thông tin thẻ thư viện</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Họ tên sinh viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTenSinhVien)
+        </dd>
+
+        <dt>
+            Tên đăng nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDN)
+        </dd>
+
+        <dt>
+            Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            Ngày hết hạn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayHetHan)
+        </dd>
+
+        <dt>
+            Tình trạng sử dụng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrangSuDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Sửa", new { id = Model.SoThe }) |
+    @Html.ActionLink("Quay về", "Index")
+</p>

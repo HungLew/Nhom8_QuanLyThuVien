@@ -1,0 +1,64 @@
+﻿@model WebThuVien.Models.MuonTraSach
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MuonTraSach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã thẻ thư viện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheThuVien.SoThe)
+        </dd>
+        <dt>
+            Họ tên sinh viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheThuVien.HoTenSinhVien)
+        </dd>
+        <dt>
+            Số kiểm soát
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DauSach.SoKiemSoat)
+        </dd>
+        <dt>
+            Ngày mượn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayMuon)
+        </dd>
+
+        <dt>
+            Ngày trả dự kiến
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTraDuKien)
+        </dd>
+
+        <dt>
+            Tình trạng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaMuonTra }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

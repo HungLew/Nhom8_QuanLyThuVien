@@ -1,0 +1,68 @@
+﻿@model WebThuVien.Models.MuonTraSach
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>Bạn có muốn xóa mượn sách này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã thẻ thư viện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheThuVien.SoThe)
+        </dd>
+        <dt>
+            Họ tên sinh viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheThuVien.HoTenSinhVien)
+        </dd>
+        <dt>
+            Số kiểm soát
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DauSach.SoKiemSoat)
+        </dd>
+        <dt>
+            Ngày mượn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayMuon)
+        </dd>
+
+        <dt>
+            Ngày trả dự kiến
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTraDuKien)
+        </dd>
+
+        <dt>
+            Tình trạng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrang)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-info" />
+            <br />
+            @Html.ActionLink("Quay về", "Index")
+        </div>
+    }
+</div>

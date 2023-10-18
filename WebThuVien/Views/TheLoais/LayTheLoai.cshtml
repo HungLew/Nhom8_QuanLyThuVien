@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebThuVien.Models.TheLoai>
+
+<ul class="list-group">
+    @foreach (var chude in Model)
+    {
+        <a href="@Url.Action("SPTheoChuDe", "Saches", new { id=chude.ID_TheLoai })"
+           class="list-group-item list-group-item-action" style="margin-left: 20px">
+            @chude.TenTheLoai
+        </a>
+    }
+</ul>
+
+

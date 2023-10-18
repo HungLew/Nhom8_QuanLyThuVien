@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fbbd031d2d774b92a2e2a79a993de187" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="ThuVien1Model.Admin" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.DauSach" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.MuonTraSach" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.NhaXuatBan" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.Sach" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.TacGia" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.TheLoai" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVien1Model.TheThuVien" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="ThuVien1Model.FK__DauSach__ID_Sach__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="ThuVien1Model.FK__MuonTraSa__MaDau__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="ThuVien1Model.FK__MuonTraSa__SoThe__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ThuVien1Model.FK__Sach__ID_NXB__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="ThuVien1Model.FK__Sach__ID_TacGia__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="ThuVien1Model.FK__Sach__ID_TheLoai__2A4B4B5E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,96 @@
+﻿@model WebThuVien.Models.Sach
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutChiTiet.cshtml";
+}
+<style>
+    .review-container {
+        max-width: 400px;
+        margin-left: 80px;
+        padding: 50px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .review-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .review-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+<div class="row">
+    <div class="card-pro" style="margin-left:100px; margin-top:50px">
+        <img src="~/Content/images/@Model.ImageSach" width="500">
+    </div>
+    <div style="margin-left: 75px; margin-top: 50px">
+        <h3 style="color: #007BFF "><strong>@Html.DisplayFor(model => model.TenSach)</strong></h3>
+        <div class="row">
+
+            <div style="margin-left:15px">
+                <br />
+                <strong>Tác giả: @Html.DisplayFor(model => model.TacGia.HotenTG)</strong>
+                <br />
+                <br />
+                <strong>Thể loại: @Html.DisplayFor(model => model.TheLoai.TenTheLoai)</strong>
+            </div>
+            <div style="margin-left:75px">
+                <br />
+                <strong>Nhà xuất bản: @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)</strong>
+                <br />
+                <br />
+                <strong>Năm xuất bản: @Html.DisplayFor(model => model.NamXuatBan)</strong>
+            </div>
+        </div>
+        <br />
+        <div>
+            <strong>Giới thiệu:</strong>
+        </div>
+        <br />
+        <div style="max-width: 650px; word-wrap: break-word;">
+            @Html.DisplayFor(model => model.GioiThieu)
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="review-container">
+    <h2 class="review-title">Đánh giá sách</h2>
+    <p class="review-text">Hãy viết đánh giá của bạn về cuốn sách này:</p>
+    <textarea class="review-input" rows="4" placeholder="Viết đánh giá của bạn ở đây"></textarea>
+    <button class="review-button">Gửi Đánh Giá</button>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

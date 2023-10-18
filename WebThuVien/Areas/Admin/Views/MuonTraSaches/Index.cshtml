@@ -1,0 +1,136 @@
+﻿@model IEnumerable<WebThuVien.Models.MuonTraSach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #ddd;
+    }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .styled-table thead th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #ddd;
+        }
+</style>
+<h2 style="text-align:center;">Quản Lý Mượn Sách</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới ", "Create")
+</p>
+<div class="filter-bar">
+    @using (Html.BeginForm("Index", "MuonTraSaches", FormMethod.Get))
+    {
+        <label for="filter">Tình trạng mượn trả: </label>
+        @Html.DropDownList("filter", new List<SelectListItem>
+        {
+            new SelectListItem { Text = "Tất cả", Value = "" },
+            new SelectListItem { Text = "Đang mượn", Value = "Đang mượn" },
+            new SelectListItem { Text = "Quá hạn", Value = "Quá hạn" },
+            new SelectListItem { Text = "Đã trả sách", Value = "Đã trả sách" }
+        })
+
+        <input type="submit" value="Lọc" />
+    }
+</div>
+<div class="table-container">
+    <table class="styled-table">
+        <tr>
+            <th>
+                Mã thẻ thư viện
+            </th>
+            <th>
+                Họ Tên Sinh Viên
+            </th>
+            <th>
+                Số Kiểm Soát
+            </th>
+            <th>
+                Ngày Mượn
+            </th>
+            <th>
+                Ngày Trả Dự Kiến
+            </th>
+            <th>
+                Tình Trạng
+            </th>
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheThuVien.SoThe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheThuVien.HoTenSinhVien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DauSach.SoKiemSoat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayMuon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTraDuKien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TinhTrang)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaMuonTra }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaMuonTra })
+                </td>
+                <td>
+                    @if (item.TinhTrang != "Đã trả sách")
+                    {
+                        using (Html.BeginForm("XacNhanTraSach", "MuonTraSaches", new { id = item.MaMuonTra }, FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="Xác nhận" class="btn btn-primary" />
+                        }
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

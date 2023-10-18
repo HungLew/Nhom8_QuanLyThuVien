@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WebThuVien.Models.TheLoai>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #ddd;
+    }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .styled-table thead th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #ddd;
+        }
+</style>
+<h2 style="text-align:center;">Quản Lý Thể Loại</h2>
+
+<p>
+    @Html.ActionLink("Thêm Thể Loại", "Create")
+</p>
+<div class="table-container">
+    <table class="styled-table">
+        <tr>
+            <th>
+                Tên Thể Loại
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTheLoai)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.ID_TheLoai }) |
+                    
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.ID_TheLoai })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

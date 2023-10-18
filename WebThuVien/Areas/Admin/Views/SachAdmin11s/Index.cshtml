@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebThuVien.Models.Sach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Thêm sách mới</h2>
+<p>
+    @Html.ActionLink("Thêm sách mới", "Create")
+</p>
+<style>
+    .main-content-pro {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card-pro {
+        border: 1px solid #ccc;
+        transition: border 0.3s;
+        width: 250px;
+        height: 325px;
+        margin-left: 25px;
+        position: relative;
+    }
+
+    .card-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .card-pro:hover {
+        border: 2px solid black;
+    }
+</style>
+<div class="search-bar">
+    <form action="/Admin/SachAdmin11s/Index" method="get">
+        <input type="text" name="searchText" placeholder="Nhập tên sách">
+        <button type="submit">Tìm kiếm</button>
+    </form>
+</div>
+<div class="container">
+    <div class="col">
+        <br />
+        <br />
+        <h3 style="color: black; text-align: center"><strong>SÁCH</strong></h3>
+    </div>
+    <br />
+    <br>
+    <div class="row">
+        <div class="main-content-pro">
+            @foreach (var pro in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <a href="/Admin/SachAdmin11s/Details/@pro.ID_Sach">
+                        <div class="card-pro" style="text-align: center">
+                            <br />
+                            <img src="~/Content/images/@pro.ImageSach" width="140" height="185" />
+                            <br />
+                            <p>@Html.DisplayFor(model => pro.TenSach)</p>
+                            <div class="card-buttons">
+                                <button style="background-color: cornflowerblue; margin-right:5px">
+                                    @Html.ActionLink("Sửa", "Edit", new { id = pro.ID_Sach }, new { style = "color: white;" })
+                                </button>
+                                <button style="background-color: cornflowerblue; margin-left:5px">
+                                    @Html.ActionLink("Xóa", "Delete", new { id = pro.ID_Sach }, new { style = "color: white;" })
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

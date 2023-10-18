@@ -1,0 +1,106 @@
+﻿@model IEnumerable<WebThuVien.Models.TheThuVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #ddd;
+    }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .styled-table thead th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #ddd;
+        }
+</style>
+<h2 style="text-align:center">Quản Lý Thẻ Thư Viện </h2>
+
+<p>
+    @Html.ActionLink("Thêm thẻ thư viện", "Create")
+</p>
+<div class="table-container">
+    <table class="styled-table">
+        <tr>
+            <th>
+                Mã thẻ thư viện
+            </th>
+            <th>
+                Họ Tên Sinh Viên
+            </th>
+            <th>
+                Tên Đăng Nhập
+            </th>
+            <th>
+                Mật Khẩu
+            </th>
+            <th>
+                Ngày Hết Hạn
+            </th>
+            <th>
+                Tình Trạng Sử Dụng
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoThe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTenSinhVien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatKhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayHetHan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TinhTrangSuDung)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.SoThe }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.SoThe })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

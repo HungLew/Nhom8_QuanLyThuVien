@@ -1,0 +1,109 @@
+﻿@model WebThuVien.Models.Sach
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .vertical-scroll-container {
+        overflow-y: scroll; /* Cho phép thanh cuộn dọc */
+        height: 300px; /* Điều chỉnh chiều cao của khung (thay đổi theo yêu cầu) */
+        border: 1px solid #ccc; /* Viền khung cho khung có thanh cuộn dọc */
+        padding: 10px; /* Khoảng cách bên trong khung */
+    }
+
+    .dau-sach-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dau-sach-item {
+        margin-bottom: 15px; /* Khoảng cách giữa các đầu sách */
+        border: 1px solid #ccc; /* Viền cho mỗi đầu sách */
+        padding: 10px; /* Khoảng cách bên trong mỗi đầu sách */
+    }
+
+    .review-container {
+        max-width: 400px;
+        margin-left: 80px;
+        padding: 50px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .review-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .review-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+<h3>Bạn có muốn xóa sách này?</h3>
+<div>
+    <div class="row">
+        <div class="card-pro" style="margin-left:100px; margin-top:50px">
+            <img src="~/Content/images/@Model.ImageSach" width="250">
+        </div>
+        <div style="margin-left: 75px; margin-top: 50px">
+            <h3 style="color: #007BFF "><strong>@Html.DisplayFor(model => model.TenSach)</strong></h3>
+            <div class="row">
+
+                <div style="margin-left:15px">
+                    <br />
+                    <strong>Tác giả: @Html.DisplayFor(model => model.TacGia.HotenTG)</strong>
+                    <br />
+                    <br />
+                    <strong>Thể loại: @Html.DisplayFor(model => model.TheLoai.TenTheLoai)</strong>
+                </div>
+                <div style="margin-left:75px">
+                    <br />
+                    <strong>Nhà xuất bản: @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)</strong>
+                    <br />
+                    <br />
+                    <strong>Năm xuất bản: @Html.DisplayFor(model => model.NamXuatBan)</strong>
+                </div>
+            </div>
+            <br />
+            <div>
+                <strong>Giới thiệu:</strong>
+            </div>
+            <br />
+            <div style="max-width: 650px; word-wrap: break-word;">
+                @Html.DisplayFor(model => model.GioiThieu)
+            </div>
+        </div>
+    </div>
+    <br />
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <button class="btn bg-danger"><input type="submit" value="Xóa" class="btn btn-default" /> </button>
+        </div>
+    }
+</div>

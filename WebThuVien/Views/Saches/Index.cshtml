@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebThuVien.Models.Sach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .main-content-pro {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+
+    .card-pro {
+        border: 1px solid #ccc;
+        transition: border 0.3s;
+        width: 200px;
+        height: 275px;
+        margin-left: 25px;
+    }
+
+        .card-pro:hover {
+            border: 2px solid black; /* Viền khi di chuột vào */
+        }
+</style>
+
+<br />
+<div class="container">
+    <div class="col">
+        <br />
+        <br />
+        <h3 style="color:black; text-align: center"><strong>SÁCH</strong></h3>
+        
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="main-content-pro">
+            <!-- in ra các sản phẩm-->
+            @foreach (var pro in Model)
+            {
+                
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <a href="/Saches/Details/@pro.ID_Sach">
+                        <div class="card-pro" style="text-align: center">
+                            <!--In hình sản phẩm lấy từ database-->
+                            <br />
+                            <img src="~/Content/images/@pro.ImageSach" width="140" height="185" />
+                            <br />
+                            <p>@Html.DisplayFor(model => pro.TenSach)</p>
+                            <!--In giá sản phẩm lấy từ database-->
+                        </div>
+                    </a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+
+</div>

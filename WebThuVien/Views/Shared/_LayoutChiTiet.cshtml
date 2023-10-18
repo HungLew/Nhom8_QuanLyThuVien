@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+
+    <title>Website Menu #4</title>
+</head>
+<style>
+    .site-footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+        .site-footer h3 {
+            color: #fff;
+        }
+
+        .site-footer p {
+            color: #ccc;
+        }
+
+    .social-icons li {
+        list-style: none;
+        display: inline;
+        margin-right: 10px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .social-icons a:hover {
+            color: #007BFF;
+        }
+</style>
+<body>
+
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">ddh@gmail.com</span></a>
+                    <span class="mx-md-2 d-inline-block"></span>
+                    <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">0901234567</span></a>
+
+
+                    <div class="float-right">
+
+                        <a href="~/Login" class=""> <span class="d-none d-md-inline-block">Đăng nhập</span></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center position-relative">
+
+
+                <div class="site-logo">
+                    <a href="~/Saches/Index" class="text-black"><span class="text-primary">DDH LIBRARY</a>
+                </div>
+
+                <div class="col-12">
+                    <nav class="site-navigation text-right ml-auto " role="navigation">
+
+                        <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                            <li><a href="~/Saches/Index" class="nav-link">Home</a></li>
+                            <li><a href="#services-section" class="nav-link">Services</a></li>
+
+
+                            <li class="has-children">
+                                <a href="#about-section" class="nav-link">About Us</a>
+                                <ul class="dropdown arrow-top">
+                                    <li><a href="#team-section" class="nav-link">Team</a></li>
+                                    <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
+                                    <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                                    <li class="has-children">
+                                        <a href="#">More Links</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Menu One</a></li>
+                                            <li><a href="#">Menu Two</a></li>
+                                            <li><a href="#">Menu Three</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li><a href="#why-us-section" class="nav-link">Why Us</a></li>
+
+                            <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+                            <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                            <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <body>
+        <div class="row">
+            <div>
+                @RenderBody();
+            </div>
+        </div>
+    </body>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="margin-left:100px">Contact Us</h3>
+                    <p style="margin-left:100px">Email: ddh@gmail.com</p>
+                    <p style="margin-left:100px">Phone: 0901234567</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 style="margin-left:230px">Follow Us</h3>
+                    <ul class="social-icons" style="margin-left:190px">
+                        <li><a href="#"><span class="icon-twitter"></span> Twitter</a></li>
+                        <li><a href="#"><span class="icon-facebook"></span> Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

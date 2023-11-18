@@ -6,7 +6,7 @@ Hướng dẫn này được tạo ra để giúp bạn quản lý và hiểu r�
 
 ## Cài đặt
 
-Để bắt đầu, bạn cần cài đặt các thư viện cần thiết. Sử dụng lệnh sau trong VS 2019:
+Để bắt đầu, bạn cần cài file database cần thiết trong thư mục. Sử dụng lệnh sau trong VS 2019:
 
 Tạo model để kết nối dữ liệu trong file.
 File database đã có trong thư mục đính kèm khi bạn tải về.
